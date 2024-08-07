@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon-32x32.png" />
+    <title>interactive pricing component</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <img
+        src="assets/bg-pattern.svg"
+        rel="rectangle-desktop"
+        class="rectangle-desktop"
+      />
+      <img
+        src="assets/Rectangle (2).png"
+        rel="Rectangle"
+        class="rectangle-mobile"
+      />
+      <header class="main-header">
+        <img
+          src="assets/pattern-circles.svg"
+          rel="pattern-circles"
+          class="pattern-circles-style"
+        />
+        <h1 class="header">Simple, traffic-based pricing</h1>
+        <div class="two-spans-style">
+          <span class="trial-style">Sign-up for our 30-day trial. </span>
+          <span class="trial-style">No credit card required.</span>
+        </div>
+      </header>
+      <div class="container">
+        <div class="page-price-style">
+          <span class="pageviews-style">100K PAGEVIEWS</span>
+          <p class="price-style-one">
+            $16.00 <span class="month-style-one">/ month</span>
+          </p>
+        </div>
+        <div class="slider-container">
+          <input
+            type="range"
+            name="range"
+            step="25"
+            class="slider"
+            id="range"
+            aria-label="input"
+          />
+        </div>
+        <p class="price-style">
+          $16.00 <span class="month-style">/ month</span>
+        </p>
+        <div class="billing-container">
+          <div class="billing-options">
+            <span>Monthly Billing</span>
+            <div class="toggler-button">
+              <div class="toggler-circle"></div>
+            </div>
+          </div>
+          <div class="billing-options">
+            <p>Yearly Billing</p>
+            <span class="percent-style">-25% </span>
+            <span class="percent-style-one">25% discount </span>
+          </div>
+        </div>
+        <div class="start-list-style">
+          <div class="list-container">
+            <div class="list-style">
+              <img src="assets/icon-check.svg" rel="icon-check" />
+              <span>Unlimited websites</span>
+            </div>
+
+            <div class="list-style">
+              <img src="assets/icon-check.svg" rel="icon-check" />
+              <span>100% data ownership </span>
+            </div>
+            <div class="list-style">
+              <img src="assets/icon-check.svg" rel="icon-check" />
+              <span>Email reports</span>
+            </div>
+          </div>
+          <button class="button-style">Start my trial</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
