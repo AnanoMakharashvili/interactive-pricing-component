@@ -157,14 +157,14 @@
   padding: 6px;
 }
 
-.toggler-button {
+.toggle-button {
   width: 43px;
   padding: 2px;
   background-color: #cfd8ef;
   border-radius: 160px;
 }
 
-.toggler-circle {
+.toggle-circle {
   border-radius: 100%;
   background-color: white;
   width: 14px;
