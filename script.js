@@ -27,7 +27,6 @@ function calculateCost(value) {
   }
   getPrice.textContent = cost;
   getPriceOne.textContent = cost;
-  getMonth.style.display = "block";
 }
 
 getInputRange.addEventListener("input", (event) => {
