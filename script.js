@@ -31,7 +31,7 @@ getInputRange.addEventListener("input", (event) => {
   calculateCost(value);
 });
 
-getToggleCircle.addEventListener("input", (event) => {
+getToggleCircle.addEventListener("click", (event) => {
   event.target.value;
   const value = range.value;
   getToggleCircle.style.marginLeft = "18";
