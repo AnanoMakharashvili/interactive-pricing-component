@@ -6,6 +6,8 @@ const getPrice = document.getElementById("price");
 const getPriceOne = document.getElementById("price-one");
 const getMonth = document.getElementById("month");
 
+let toggleButtonOn = false;
+
 function calculateCost(value) {
   let cost = 8;
 
@@ -25,8 +27,17 @@ function calculateCost(value) {
     pageviewCost.textContent = "1M Pageviews";
     cost = "$36";
   }
+
   getPrice.textContent = cost;
   getPriceOne.textContent = cost;
+
+  range.style.background = `linear-gradient(
+  to right,
+  hsl(174, 77%, 80%) 0%,
+  hsl(174, 77%, 80%) ${value}%,
+   hsl(224, 65%, 95%) 50%,
+   hsl(224, 65%, 95%) 100%
+)`;
 }
 
 getInputRange.addEventListener("input", (event) => {
@@ -36,9 +47,14 @@ getInputRange.addEventListener("input", (event) => {
 });
 
 getToggleCircle.addEventListener("click", (event) => {
-  event.target.value;
-  const value = range.value;
-  getToggleCircle.style.marginLeft = "18";
-  getButton.style.backgroundColor = "#7AEADF";
-  calculateCost(value);
+  if (toggleButtonOn) {
+    getToggleCircle.style.marginLeft = "4px";
+    toggleButtonOn = false;
+    getButton.style.backgroundColor = " #CFD8EF";
+  } else {
+    getToggleCircle.style.marginLeft = "18px";
+    toggleButtonOn = true;
+    getButton.style.backgroundColor = "#7AEADF";
+    getButton.style.cursor = "pointer";
+  }
 });
