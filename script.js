@@ -5,31 +5,37 @@ const pageviewCost = document.getElementById("pageview");
 const getPrice = document.getElementById("price");
 const getPriceOne = document.getElementById("price-one");
 const getMonth = document.getElementById("month");
+const getMonthOne = document.getElementById("month-one");
 
-let toggleButtonOn = false;
+let isToggleButtonOn = false;
+let period = "/month";
 
 function calculateCost(value) {
   let cost = 8;
 
-  if ((value >= 0) & (value <= 20)) {
+  if (value >= 0 && value <= 20) {
     pageviewCost.textContent = "10K Pageviews";
-    cost = "$8";
+    cost = isToggleButtonOn ? "$90" : "$8";
   } else if (value > 20 && value <= 40) {
     pageviewCost.textContent = "50K Pageviews";
-    cost = "$12";
+    cost = isToggleButtonOn ? "$108" : "$12";
   } else if (value > 40 && value <= 60) {
     pageviewCost.textContent = "100K Pageviews";
-    cost = "$16";
+    cost = isToggleButtonOn ? "$144" : "$16";
   } else if (value > 60 && value <= 80) {
     pageviewCost.textContent = "500K Pageviews";
-    cost = "$24";
+    cost = isToggleButtonOn ? "$180" : "$24";
   } else if (value > 80 && value <= 100) {
     pageviewCost.textContent = "1M Pageviews";
-    cost = "$36";
+    cost = isToggleButtonOn ? "$225" : "$36";
   }
-
+  if (isToggleButtonOn) {
+    period = "/year";
+  }
   getPrice.textContent = cost;
   getPriceOne.textContent = cost;
+  getMonth.textContent = period;
+  getMonthOne.textContent = period;
 
   range.style.background = `linear-gradient(
   to right,
@@ -46,15 +52,15 @@ getInputRange.addEventListener("input", (event) => {
   calculateCost(value);
 });
 
-getToggleCircle.addEventListener("click", (event) => {
-  if (toggleButtonOn) {
+getButton.addEventListener("click", (event) => {
+  if (isToggleButtonOn) {
     getToggleCircle.style.marginLeft = "4px";
-    toggleButtonOn = false;
     getButton.style.backgroundColor = " #CFD8EF";
+    isToggleButtonOn = false;
   } else {
     getToggleCircle.style.marginLeft = "18px";
-    toggleButtonOn = true;
     getButton.style.backgroundColor = "#7AEADF";
     getButton.style.cursor = "pointer";
+    isToggleButtonOn = true;
   }
 });
