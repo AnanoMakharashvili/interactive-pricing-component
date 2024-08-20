@@ -31,6 +31,8 @@ function calculateCost(value) {
   }
   if (isToggleButtonOn) {
     period = "/year";
+  } else {
+    period = "/month";
   }
   getPrice.textContent = cost;
   getPriceOne.textContent = cost;
