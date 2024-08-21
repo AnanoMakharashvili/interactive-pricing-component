@@ -12,7 +12,6 @@ let period = "/month";
 
 function calculateCost(value) {
   let cost = 8;
-
   if (value >= 0 && value <= 20) {
     pageviewCost.textContent = "10K Pageviews";
     cost = isToggleButtonOn ? "$90" : "$8";
@@ -29,11 +28,7 @@ function calculateCost(value) {
     pageviewCost.textContent = "1M Pageviews";
     cost = isToggleButtonOn ? "$225" : "$36";
   }
-  if (isToggleButtonOn) {
-    period = "/year";
-  } else {
-    period = "/month";
-  }
+  period = isToggleButtonOn ? "/year" : "/month";
   getPrice.textContent = cost;
   getPriceOne.textContent = cost;
   getMonth.textContent = period;
@@ -65,4 +60,6 @@ getButton.addEventListener("click", (event) => {
     getButton.style.cursor = "pointer";
     isToggleButtonOn = true;
   }
+  const value = getInputRange.value;
+  calculateCost(value);
 });
